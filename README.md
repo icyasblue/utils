@@ -1,8 +1,10 @@
 utils
 =====
 
-scripts might be useful
+## Scripts might be useful
 
-./shell   # shell scripts
-./python  # python scripts
-...
+*   shell scripts
+        ./shell
+*   python scripts
+        ./python
+*   TBD
