@@ -1,4 +1,9 @@
 var Utils = {
+  // format string the python way (sort of)
+  // eg: format('a{0}b{1}c{2}', [1,2,3]) -> 'a1b2c3'
+  //     format('a{a}b{b}c{c}', {a:1, b:2, c:3}) -> 'a1b2c3'
+  //     format('a{{{}}}{0}b', [1]) -> 'a{{}}1b' // in case of '{' or '}'
+  // TODO, handle mix of '{}' and keys in {}
   format : function (str, args) {
     var base = '';
     var open = 0;
@@ -40,7 +45,9 @@ var Utils = {
     return base;
   },
 
-  merge: function(dest, obj, override = 1) {
+  // merge object properties
+  merge: function(dest, obj, override) {
+    var ov = override == undefined ? 1 : override;
     for (var key in Object.keys(obj)) {
       if (!override && dest.hasOwnProperty(key))
         continue;
