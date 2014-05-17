@@ -7,4 +7,6 @@ utils
         ./shell
 *   python scripts
         ./python
+*   nodejs scripts
+        ./js
 *   TBD
