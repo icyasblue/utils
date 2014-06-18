@@ -1,0 +1,5 @@
+#!/bin/bash
+# ssh-copy-id for mac
+# also add symlink for /user/bin/ssh-copy-id -> <where/this/script/is> to use it without path
+
+cat ~/.ssh/id_rsa.pub | ssh $1 "mkdir ~/.ssh &> /dev/null; cat >> ~/.ssh/authorized_keys"
